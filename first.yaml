@@ -4,6 +4,10 @@ jobs:
   firstjob:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Checkout
+        uses: actions/checkout@v6.0.1
+
       - name: First Step- Run a one-line script
         run: echo "This is the first workflow for demonstration." 
 
