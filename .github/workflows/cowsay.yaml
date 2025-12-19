@@ -1,23 +1,22 @@
-name : Cowsay Workflow
-on : push
-jobs :
-  cowsay_draw :
-    runs-on : ubuntu-latest
-    steps :
-      - name : Checkout Repository
-        uses : actions/checkout@v2
+name: Cowsay-Draw
 
-      - name : Install Cowsay
-        run : sudo apt-get install -y cowsay
+on: push
 
-      - name : Run cowsay cmd
-        run  : cowsay -f dragon "CI is fun for cowsay!" >> dragon.txt
+jobs:
+    cowsay-draw:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
 
-      - name : check file
-        run :  grep -i  "dragon" dragon.txt
+            - name: Install Cowsay
+              run: sudo apt-get install -y cowsay
 
-      - name : REad file
-        run : cat dragon.txt
+            - name: Run COwsay cmd
+              run: cowsay -f dragon "This is a dragon saying hello!" >> dragon.txt
 
-      - name : Run Cowsay
-        run : cowsay "Hello from GitHub Actions!"
+            - name: check file
+              run: grep -i "dragon" dragon.txt
+
+            - name: Read file
+              run: cat dragon.txt
