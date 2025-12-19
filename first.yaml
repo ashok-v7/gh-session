@@ -1,0 +1,29 @@
+name: First Workflow
+on: push
+jobs:
+  firstjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step- Run a one-line script
+        run: echo "This is the first workflow for demonstration." 
+
+      - name: Trigger Second Workflow-list file in registry
+        run: ls -la 
+
+      - name: THird workflow Read file
+        run: cat README.md
+
+      #   uses: actions/github-script@v6
+      #   with:
+      #     script: |
+      #       const response = await github.rest.actions.createWorkflowDispatch({
+      #         owner: context.repo.owner,
+      #         repo: context.repo.repo,
+      #         workflow_id: 'second.yaml',
+      #         ref: context.ref,
+      #       });
+      #       console.log('Triggered second workflow:', response.data); 
+      # - name: Complete First Workflow
+      #   run: echo "First workflow completed"
+
+    
