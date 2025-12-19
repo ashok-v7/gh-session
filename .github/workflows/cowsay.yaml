@@ -6,12 +6,6 @@ on :
           - main
      paths:
             - '.github/workflows/cowsay.yaml'
-jobs :
-  cowsay_draw :
-    runs-on : ubuntu-latest
-    steps :
-      - name : Checkout Repository
-        uses : actions/checkout@v2
 
 jobs:
     cowsay-draw:
