@@ -36,3 +36,5 @@ jobs:
           ls -ltra
           cat README.md
           echo test, and deploy your project.
+      - name : Cowsay Drawing
+        run : cowsay -f dragon "CI is fun for cowsay!" 
